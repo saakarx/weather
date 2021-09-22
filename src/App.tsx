@@ -1,4 +1,5 @@
 import axios from "axios";
+// import "dotenv/config";
 import { useEffect, useState } from "react";
 
 import "./App.css";
@@ -12,7 +13,11 @@ import {
   WeatherDataType,
 } from "./types/Types.type";
 
+// dotenv.config({ path: __dirname + "/.env/" });
+// require("dotenv").config({ path: __dirname + "/.env" });
+
 function App() {
+  const API_KEY = process.env.REACT_APP_API_KEY;
   const [posCoords, setPosCoords] = useState<PositionCoordsType | null>(null);
   const [status, setStatus] = useState<StatusType>("loading");
   const [err, setErr] = useState<string>("");
@@ -37,7 +42,7 @@ function App() {
     const fetchWeatherData = async () => {
       try {
         const { data } = await axios.get(
-          `http://api.weatherapi.com/v1/current.json?key=f7f67ca92e7249a2aa392501211909&q=${posCoords?.lat},${posCoords?.lng}&aqi=yes`
+          `http://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${posCoords?.lat},${posCoords?.lng}&aqi=yes`
         );
         setWeatherData(data);
         setStatus("success");
