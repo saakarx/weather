@@ -13,7 +13,7 @@ import {
 } from "./types/Types.type";
 
 function App() {
-  const API_KEY = process.env.API_KEY;
+  const API_KEY = process.env.REACT_APP_API_KEY;
   const [posCoords, setPosCoords] = useState<PositionCoordsType | null>(null);
   const [status, setStatus] = useState<StatusType>("loading");
   const [err, setErr] = useState<string>("");
