@@ -2,4 +2,4 @@
 
 Created using React Typescipt
 
-API used: weatherapi.com
+API used: [WeatherAPI](weatherapi.com)
