@@ -1,5 +1,4 @@
 import axios from "axios";
-// import "dotenv/config";
 import { useEffect, useState } from "react";
 
 import "./App.css";
@@ -13,11 +12,8 @@ import {
   WeatherDataType,
 } from "./types/Types.type";
 
-// dotenv.config({ path: __dirname + "/.env/" });
-// require("dotenv").config({ path: __dirname + "/.env" });
-
 function App() {
-  const API_KEY = process.env.REACT_APP_API_KEY;
+  const API_KEY = process.env.API_KEY;
   const [posCoords, setPosCoords] = useState<PositionCoordsType | null>(null);
   const [status, setStatus] = useState<StatusType>("loading");
   const [err, setErr] = useState<string>("");
