@@ -38,7 +38,7 @@ function App() {
     const fetchWeatherData = async () => {
       try {
         const { data } = await axios.get(
-          `http://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${posCoords?.lat},${posCoords?.lng}&aqi=yes`
+          `https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${posCoords?.lat},${posCoords?.lng}&aqi=yes`
         );
         setWeatherData(data);
         setStatus("success");
