@@ -17,7 +17,9 @@ function App() {
   const [posCoords, setPosCoords] = useState<PositionCoordsType | null>(null);
   const [status, setStatus] = useState<StatusType>("loading");
   const [err, setErr] = useState<string>("");
-  const [weatherData, setWeatherData] = useState({} as WeatherDataType);
+  const [weatherData, setWeatherData] = useState<WeatherDataType>(
+    {} as WeatherDataType
+  );
 
   function success({ coords }: SuccessType) {
     setPosCoords({ lat: coords.latitude, lng: coords.longitude });

@@ -3,13 +3,15 @@ import Heading from "./Heading";
 import SmallItem from "./SmallItem";
 
 const InfoItem = (props: InfoItemType) => {
-  const { heading, type, icon, value } = props;
+  const { heading, type, icon: Icon, value } = props;
   return (
     <div
       className={`info-item`}
       style={{ marginBottom: props.addMarginBottom }}
     >
-      <Heading heading={heading}>{icon}</Heading>
+      <Heading heading={heading}>
+        <Icon />
+      </Heading>
       {type === "multiple" ? (
         <div className="info-item__multiple">
           {Object.entries(value).map(([key, val], idx) => {

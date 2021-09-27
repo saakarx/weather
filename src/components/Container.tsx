@@ -1,6 +1,6 @@
 import InfoItem from "./InfoItem";
 import Location from "./Location";
-import { ReactComponent as AirQuality } from "../assets/air-quality-icon.svg";
+import { ReactComponent as AirQualityIcon } from "../assets/air-quality-icon.svg";
 import { ReactComponent as CloudIcon } from "../assets/cloud-icon.svg";
 import { ReactComponent as ConditionIcon } from "../assets/condition-icon.svg";
 import { ReactComponent as HumidityIcon } from "../assets/humidity-icon.svg";
@@ -38,20 +38,20 @@ const Container = ({ weatherData }: ContainerProps) => {
         <div className="container">
           <Location icon={<LocationIcon />} value={{ region, country }} />
           <InfoItem
-            icon={<ThermometerIcon />}
+            icon={ThermometerIcon}
             heading="Temp"
             value={`${tempC.toFixed(1)}`}
             type="temp"
             addMarginBottom={15}
           />
           <InfoItem
-            icon={<ConditionIcon />}
+            icon={ConditionIcon}
             heading="Condition"
             value={conditionText}
             type="normal"
           />
           <InfoItem
-            icon={<WindIcon />}
+            icon={WindIcon}
             heading="Wind"
             value={{
               speed: `${windSpeed.toFixed(1)} Kph`,
@@ -61,7 +61,7 @@ const Container = ({ weatherData }: ContainerProps) => {
             type="multiple"
           />
           <InfoItem
-            icon={<AirQuality />}
+            icon={AirQualityIcon}
             heading="Air Quality"
             value={{
               co: Number(co).toFixed(1),
@@ -72,37 +72,37 @@ const Container = ({ weatherData }: ContainerProps) => {
             type="multiple"
           />
           <InfoItem
-            icon={<PrecipitateIcon />}
+            icon={PrecipitateIcon}
             heading="Precipitate"
             value={`${precipitate} mm`}
             type="normal"
           />
           <InfoItem
-            icon={<HumidityIcon />}
+            icon={HumidityIcon}
             heading="Humidity"
             value={`${humidity}%`}
             type="normal"
           />
           <InfoItem
-            icon={<UVIcon />}
+            icon={UVIcon}
             heading="UV Index"
             value={uv.toFixed(1)}
             type="normal"
           />
           <InfoItem
-            icon={<CloudIcon />}
+            icon={CloudIcon}
             heading="Cloud"
             value={`${cloud}%`}
             type="normal"
           />
           <InfoItem
-            icon={<PressureIcon />}
+            icon={PressureIcon}
             heading="Pressure"
             value={`${pressure.toFixed(1)} mb`}
             type="normal"
           />
           <InfoItem
-            icon={<VisbilityIcon />}
+            icon={VisbilityIcon}
             heading="Visibility"
             value={`${visibility.toFixed(1)} km`}
             type="normal"

@@ -26,7 +26,7 @@ export type InfoItemType = {
   heading: string;
   value: string | WindValueType | AirQualityValueType;
   type: "multiple" | "normal" | "temp";
-  icon: React.ReactChild;
+  icon: React.ComponentType;
   addMarginBottom?: number;
 };
 
