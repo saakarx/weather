@@ -1,8 +1,9 @@
 :root {
-  --primary: #b97a95;
+  --heading: #b97a95;
+  --subHeading: #716f81;
   --secondary: #716f81;
   --value: #f6ae99;
-  --bg: #fff;
+  --bg: #f6f7f8;
 }
 
 * {
@@ -11,12 +12,20 @@
   box-sizing: border-box;
 }
 
+html.dark {
+  --heading: #f2e1c1;
+  --subHeading: #f6f7f8;
+  --secondary: #fff;
+  --value: #f6ae99;
+  --bg: #716f81;
+}
+
 body {
   background-color: var(--bg);
-  font-family: "Roboto Mono", monospace;
+  font-family: 'Roboto Mono', monospace;
   font-size: 17px;
   text-transform: uppercase;
-  padding: 30px 0.75em;
+  padding: 30px 0.75rem;
 }
 
 .container {
@@ -26,13 +35,18 @@ body {
   gap: 25px;
 }
 
+.icon {
+  stroke-width: 1;
+  stroke: var(--heading);
+}
+
 .location {
   justify-content: center;
   margin-bottom: 45px;
 }
 
 .location__value {
-  color: var(--secondary);
+  color: var(--subHeading);
 }
 
 .info-item {
@@ -58,7 +72,7 @@ body {
 .info-item__heading {
   font-weight: 300;
   letter-spacing: 1em;
-  color: var(--primary);
+  color: var(--heading);
   width: max-content;
 }
 
@@ -85,6 +99,9 @@ body {
   align-items: center;
   gap: 8px;
 }
+.small-item__heading {
+  color: var(--subHeading);
+}
 
 .loader {
   width: 100%;
@@ -110,11 +127,70 @@ body {
   text-align: center;
 }
 
+.toggle-theme__wrapper {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  text-transform: capitalize;
+  font-size: 14px;
+}
+
+.toggle-theme__label .sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.toggle-theme__heading {
+  color: var(--subHeading);
+}
+
+.toggle-theme__label input {
+  position: absolute;
+  display: none;
+}
+
+.toggle-theme__label input:checked ~ .toggle-theme__bg {
+  --toggleBg: #f6f7f8;
+}
+
+.toggle-theme__bg {
+  --toggleBg: #716f81;
+  --toggleFg: #f6ae99;
+
+  width: 44px;
+  height: 24px;
+  background-color: var(--toggleBg);
+  border-radius: 999px;
+  position: relative;
+}
+
+.toggle-theme__bg::after {
+  position: absolute;
+  content: '';
+  width: 18px;
+  height: 18px;
+  background-color: var(--toggleFg);
+  border-radius: 999px;
+  top: 3px;
+  left: 3px;
+  transition: all 150ms cubic-bezier(0.6, -0.28, 0.735, 0.045);
+}
+.toggle-theme__label input:checked ~ .toggle-theme__bg::after {
+  transform: translateX(20px);
+}
+
 .powered-by {
-  color: var(--secondary);
+  color: var(--subHeading);
 }
 
 .powered-by__link {
-  color: var(--primary);
+  color: var(--heading);
   text-decoration: none;
 }
